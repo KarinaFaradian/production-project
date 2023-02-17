@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-import AboutPage from './pages/AboutPage/AboutPage';
-import MainPage from './pages/MainPage/MainPage';
+import { AboutPageAsync } from './pages/AboutPage/AboutPage.lazy';
+import { MainPageAsync } from './pages/MainPage/MainPage.lazy';
 
 import './index.scss';
 
@@ -12,10 +12,12 @@ const App = () => {
     <div className="app">
       <Link to={'/'}>Main Page</Link>
       <Link to={'/about'}>About Page</Link>
-      <Routes>
-        <Route path={'/about'} element={<AboutPage />} />
-        <Route path={'/'} element={<MainPage />} />
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path={'/about'} element={<AboutPageAsync />} />
+          <Route path={'/'} element={<MainPageAsync />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 };

@@ -5,11 +5,17 @@ import { Link } from 'react-router-dom';
 import { AboutPageAsync } from './pages/AboutPage/AboutPage.lazy';
 import { MainPageAsync } from './pages/MainPage/MainPage.lazy';
 
-import './index.scss';
+import { useTheme } from './theme/useTheme';
+
+import './styles/index.scss';
 
 const App = () => {
+ 
+const { theme, toggleTheme } = useTheme();
+
   return (
-    <div className="app">
+    <div className={`app ${theme}`}>
+      <button onClick={toggleTheme}>Change Theme</button>
       <Link to={'/'}>Main Page</Link>
       <Link to={'/about'}>About Page</Link>
       <Suspense fallback={<div>Loading...</div>}>

@@ -9,16 +9,16 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from './providers/router';
 
 import './styles/index.scss';
+import { Navbar } from 'widgetes/Navbar';
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <button onClick={toggleTheme}>Change Theme</button>
-      <Link to={'/'}>Main Page</Link>
-      <Link to={'/about'}>About Page</Link>
+      <Navbar />
       <AppRouter />
+      <button onClick={toggleTheme}>Change Theme</button>
     </div>
   );
 };

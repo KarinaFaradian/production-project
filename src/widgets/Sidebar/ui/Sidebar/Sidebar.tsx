@@ -1,4 +1,3 @@
-import { ThemeProvider } from 'app/providers/ThemeProvider';
 import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { LangSwitcher } from 'widgets/LangSwitcher/ui/LangSwitcher';

@@ -1,5 +1,8 @@
 {
   "Test translation": "Тестовый перевод",
   "Translate": "RU",
-  "Not found": "Страница не найдена"
+  "Not found": "Страница не найдена",
+  "Something is wrong": "Что-то пошло не так",
+  "Reload": "Перезагрузить",
+  "Throw error": "Выбросить ошибку"
 }

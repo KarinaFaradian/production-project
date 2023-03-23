@@ -54,7 +54,7 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true }]
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to'] }]
   },
   globals: {
     IS_DEV: true

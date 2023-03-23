@@ -5,14 +5,6 @@ module.exports = {
     jest: true
   },
   extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18next/recommended'],
-  overrides: [
-    {
-      files: ['global.d.ts'],
-      rules: {
-        'no-undef': 'off'
-      }
-    }
-  ],
   parserOptions: {
     parser: '@typescript-eslint-parser',
     project: './tsconfig.json',
@@ -54,11 +46,25 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to'] }]
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }]
   },
   globals: {
     IS_DEV: true
   },
+  overrides: [
+    {
+      files: ['global.d.ts'],
+      rules: {
+        'no-undef': 'off'
+      }
+    },
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off'
+      }
+    }
+  ],
   settings: {
     react: {
       version: 'detect'
